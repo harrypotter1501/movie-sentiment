@@ -1,3 +1,4 @@
+
 data/
 
 twitter/__pycache__/
@@ -5,4 +6,4 @@ twitter/data/
 
 .DS_Store
 
-.ipynb_checkpoints
+.ipynb_checkpoints/
