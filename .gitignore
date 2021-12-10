@@ -1,4 +1,8 @@
-./data/
+data/
 
-./twitter/__pycache__/
-./twitter/data/
+twitter/__pycache__/
+twitter/data/
+
+.DS_Store
+
+.ipynb_checkpoints
