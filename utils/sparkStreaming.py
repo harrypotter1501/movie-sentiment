@@ -3,6 +3,8 @@ from pyspark.streaming import StreamingContext
 from pyspark.sql import SQLContext
 import time
 
+from config import *
+
 
 def fetch_data(stream_time, ip, port, out_path):
     try:
@@ -21,7 +23,7 @@ def fetch_data(stream_time, ip, port, out_path):
         # create the Streaming Context from the above spark context with batch interval size 5 seconds
         ssc = StreamingContext(sc, 5)
         # setting a checkpoint to allow RDD recovery
-        ssc.checkpoint("twitter/data/checkpoint_TwitterApp")
+        ssc.checkpoint(cp_path)
 
         # read data from port 9001
         dataStream = ssc.socketTextStream(ip, port)
@@ -33,7 +35,8 @@ def fetch_data(stream_time, ip, port, out_path):
         ssc.stop(stopSparkContext=False, stopGraceFully=True)
 
     except BaseException as e:
-        print(e)
+        #print(e)
+        pass
     finally:
         sc.stop()
 

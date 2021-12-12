@@ -28,15 +28,7 @@ from tweepy.streaming import StreamListener
 import socket
 import json
 
-
-# credentials
-# TODO: replace with your own credentials
-ACCESS_TOKEN = '1440425207190024196-iSOaQja7rMiCMbZwoslmfOe0RX0XPu'     # your access token
-# your access token secret
-ACCESS_SECRET = '2eOScxtfc6aUqfZc4xEDfMTRlxJUIkavB1i0Shfbi6fIt'
-CONSUMER_KEY = 'GnCIBr4YWVSFH65ZbOFvXJEpB'     # your API key
-# your API secret key
-CONSUMER_SECRET = 'Q15jf7i3M7JcOtevi4EYhCjLblKUrJOdDBKgUAxz5npWVmifVB'
+from config import *
 
 
 class TweetsListener(StreamListener):
@@ -75,7 +67,7 @@ def sendData(c_socket, tags):
 
 class twitter_client:
     def __init__(self, TCP_IP, TCP_PORT):
-        self.s = s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.s.bind((TCP_IP, TCP_PORT))
 
     def run_client(self, tags):
