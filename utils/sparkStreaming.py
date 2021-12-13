@@ -3,6 +3,8 @@ from pyspark.streaming import StreamingContext
 from pyspark.sql import SQLContext
 import time
 
+from utils.context import SprkCxt
+
 from config import *
 
 
@@ -14,7 +16,8 @@ def fetch_data(stream_time, ip, port, out_path):
         conf.setAppName("TwitterStreamApp")
 
         # create spark context with the above configuration
-        sc = SparkContext(conf=conf)
+        #sc = SparkContext(conf=conf)
+        sc = SprkCxt()
         sc.setLogLevel("ERROR")
 
         # create sql context, used for saving rdd
@@ -37,6 +40,4 @@ def fetch_data(stream_time, ip, port, out_path):
     except BaseException as e:
         #print(e)
         pass
-    finally:
-        sc.stop()
 

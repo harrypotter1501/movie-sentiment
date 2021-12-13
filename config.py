@@ -28,5 +28,8 @@ features_default = [
 ]
 path = './data/movies.csv'
 
-# spark
+# preprocess
+pp_path = './data/movies_pp.csv'
 
+# train
+m_path = './data/models'
