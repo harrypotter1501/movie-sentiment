@@ -1,8 +1,13 @@
 # context
 
+# import module
 import pyspark
 
 class SprkCxt:
+    """
+    Managing SparkContext. 
+    Use singleton to prevent problems caused by multiple creation across different functions. 
+    """
 
     instance = None
 
