@@ -41,7 +41,20 @@ features_default = [
 # raw data path
 path = './data/movies.csv'
 
+
 # --- preprocess --
 # preprocessed data path
 pp_path = './data/movies_pp.csv'
+# lda num topics
+num_topics=10
+# lda max iters
+max_iterations=50
+# lda num of words for each topic
+wordNumbers=10
+
+
+# --- analysis ---
+# predicted results path
+pred_path = './data/predicts.csv'
+topic_path = './data/topics.txt'
 

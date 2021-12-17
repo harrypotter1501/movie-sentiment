@@ -4,3 +4,4 @@ data/checkpoint_TwitterApp
 data/twitter/
 .DS_Store
 .ipynb_checkpoints/
+data/copies/

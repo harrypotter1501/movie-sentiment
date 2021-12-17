@@ -40,15 +40,15 @@ def read_and_process(path=path):
         .apply(lambda x: pickle.loads(literal_eval(x))) \
         .apply(lambda x: [g['name'].lower() for g in x])
 
-    # process tmdb reviews -> list of texts
+    # process tmdb reviews -> texts
     df['reviews_tmdb'] = df['reviews_tmdb'] \
         .apply(lambda x: pickle.loads(literal_eval(x))) \
-        .apply(lambda x: [r['content'] for r in x])
+        .apply(lambda x: ' '.join([r['content'] for r in x]))
 
-    # process imdb reviews -> list of texts
+    # process imdb reviews -> texts
     df['reviews_imdb'] = df['reviews_imdb'] \
         .apply(lambda x: pickle.loads(literal_eval(x))) \
-        .apply(lambda x: [r['content'] for r in x])
+        .apply(lambda x: ' '.join([r['content'] for r in x]))
 
     def join(series):
         """join contents of multiple pandas series"""
@@ -78,7 +78,8 @@ def sia(df):
     return df.join(rev)
 
 
-def preprocess(num_topics=3, max_iterations=10, wordNumbers=5, path=path, pp_path=pp_path):
+def preprocess(num_topics=num_topics, max_iterations=max_iterations, 
+               wordNumbers=wordNumbers, path=path, pp_path=pp_path):
     """
     Preprocess raw data.
     Perform feature extraction, SIA & LDA.
@@ -94,7 +95,12 @@ def preprocess(num_topics=3, max_iterations=10, wordNumbers=5, path=path, pp_pat
 
     # lda
     print('Performing LDA...')
-    df = reviews_lda(df, num_topics=num_topics, max_iterations=max_iterations, wordNumbers=wordNumbers)
+    df, topics = reviews_lda(df, num_topics=num_topics, 
+                             max_iterations=max_iterations, wordNumbers=wordNumbers)
+
+    # save topic words
+    with open('./data/topics.txt', 'w') as f:
+        f.write(str(topics))
 
     df.to_csv(pp_path, index=False)
     print('Data persisted to {}'.format(pp_path))
