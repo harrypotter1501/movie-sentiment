@@ -1,7 +1,11 @@
 
 __pycache__/
+
+.ipynb_checkpoints/
+
 data/checkpoint_TwitterApp
 data/twitter/
-.DS_Store
-.ipynb_checkpoints/
 data/copies/
+
+.DS_Store
+

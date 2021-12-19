@@ -62,7 +62,7 @@ def read_and_process(path=path):
 
 def sia(df):
     """
-    Analyze sentiment intesity for a whole list of texts.
+    Analyze sentiment intesity for all texts.
     """
 
     sia = SentimentIntensityAnalyzer()

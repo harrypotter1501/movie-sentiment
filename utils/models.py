@@ -142,7 +142,7 @@ def vectorize(df):
     cv_genres = CountVectorizer(inputCol='genres', outputCol='genres_vec', minDF=10)
     cvg_model = cv_genres.fit(df)
     df = cvg_model.transform(df)
-    
+
     # assemble columns
     inputCols=[
         'vote_count', 'genres_vec', 'budget', 'popularity', 'release_date_int', 
@@ -175,7 +175,7 @@ def ExtractFeatureImp(featureImp, dataset, featuresCol):
 
 def validate(data_path=pp_path):
     """
-    Train a model on validate it. 
+    Train a model and validate it. 
     """
 
     df = load_data(data_path)
@@ -237,5 +237,4 @@ def validate(data_path=pp_path):
     print('Results saved to ./data/predicts.csv')
 
     return feat
-
 
