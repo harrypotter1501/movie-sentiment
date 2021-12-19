@@ -29,7 +29,7 @@ A few of the key tools and environments are listed as follows.
 * IMDbPY==2021.4.18
 * tweepy==3.9.0
 
-For detailed evironments, [see requirements.txt](https://github.com/harrypotter1501/e6893-project/blob/d866675501389a6f5c81839729c7a25a762fa6f5/requirements.txt). 
+For detailed evironments, see [requirements.txt](https://github.com/harrypotter1501/e6893-project/blob/d866675501389a6f5c81839729c7a25a762fa6f5/requirements.txt). 
 
 ### Execution
 
