@@ -99,8 +99,10 @@ def preprocess(num_topics=num_topics, max_iterations=max_iterations,
                              max_iterations=max_iterations, wordNumbers=wordNumbers)
 
     # save topic words
-    with open('./data/topics.txt', 'w') as f:
+    topics_path = './data/topics.txt'
+    with open(topics_path, 'w') as f:
         f.write(str(topics))
+    print('Topics persisted to {}'.format(topics_path))
 
     df.to_csv(pp_path, index=False)
     print('Data persisted to {}'.format(pp_path))
