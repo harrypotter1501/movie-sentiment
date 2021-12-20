@@ -1,5 +1,5 @@
 
-# Analysis of Relationship Between Movie Score and Public Reviews
+# Analysis of Correlation Between Movie Score and Public Reviews
 ## EECS6893-FinalProject-Group9
 
 Proprosed and experimented a text-based movie score prediction system. 
