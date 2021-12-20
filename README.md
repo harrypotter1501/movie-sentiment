@@ -11,6 +11,8 @@ Proprosed and experimented a text-based movie score prediction system.
 
 ## Description
 
+![System Workflow](./data/images/system_final.png)
+
 Our project aims to collect website reviews related to different movies, extract meaningful information and predict the actual votes. This will be helpful for the audiences to choose movies that are worth watching, as well as helping the cinemas to make more reasonable arrangements on movie schedules.
 
 ## Getting Started
